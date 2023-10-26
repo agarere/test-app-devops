@@ -2,11 +2,10 @@ const express = require('express');
 const app = express();
 const { accessControl } = require('./middleware')
 
-const PORT = 5000;
-
 const users = [
-  { id: 1, name: 'Ediz'},
-  { id: 2, name: 'Hülya'}
+  { id: 1, name: 'Nuri'},
+  { id: 2, name: 'Bilge'},
+  { id: 3, name: 'Ceylan'}
 ]
 
 // not: req.body'yi json olarak alabilmek için bu middleware dahil ediyoruz.
@@ -75,6 +74,6 @@ app.delete('/users/:id', (req, res, next) => {
   })
 })
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Server Started');
 });
